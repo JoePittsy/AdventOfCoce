@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# Joseph Pitts 1st of December 2020
+
 def read_data(path):
     big_nums = []
     small_nums = []

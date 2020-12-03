@@ -42,6 +42,5 @@ def task_two(dataset):
 
 if __name__ == "__main__":
     dataset = read_data("input.txt")
-    print(dataset)
     print(f"Answer for Task One is {task_one(dataset)}")
     print(f"Answer for Task Two is {task_two(dataset)}")

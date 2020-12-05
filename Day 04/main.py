@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# Joseph Pitts 4th of December 2020
+
 def read_data(path):
     passports = []
     passport = ""

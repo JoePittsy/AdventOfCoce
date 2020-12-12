@@ -19,50 +19,6 @@ def read_data(path):
     return dataset
 
 
-# def task_one(seatplan):
-#     def query(y, x):
-#         if y < 0 or x < 0 or y > height - 1 or x > width - 1:
-#             return "."
-#         return old_seats[y][x]
-#
-#     width = len(seatplan[0])
-#     height = len(seatplan)
-#     seats = deepcopy(seatplan)
-#     old_seats = deepcopy(seatplan)
-#     old_seats_new = deepcopy(seatplan)
-#     last = False
-#
-#     for _ in range(300):
-#         for y in range(height):
-#             for x in range(width):
-#                 old_seats_new[y][x] = seats[y][x]
-#
-#                 current_seat = query(y, x)
-#
-#                 neighbours = [
-#                     query(y - 1, x - 1),  # Top Left
-#                     query(y - 1, x),  # Top
-#                     query(y - 1, x + 1),  # Top Right
-#                     query(y, x - 1),  # Left
-#                     query(y, x + 1),  # Right
-#                     query(y + 1, x - 1),  # Bottom Left
-#                     query(y + 1, x),  # Bottom
-#                     query(y + 1, x + 1),  # Bottom Right
-#                 ]
-#
-#                 if current_seat == "L" and "#" not in neighbours:
-#                     seats[y][x] = "#"
-#                 elif current_seat == "#" and len(["#" for seat in neighbours if seat == "#"]) >= 4:
-#                     seats[y][x] = "L"
-#         pretty_print(seats)
-#         old_seats = old_seats_new
-#
-#         # if seats == old_seats_new and last:
-#         #
-#         # last = seats == old_seats
-#         print(len([1 for row in seats for seat in row if seat == "#"]))
-#     return len([1 for row in seats for seat in row if seat == "#"])
-
 def task_one(seatplan):
     def query(y, x):
         if y < 0 or x < 0:
@@ -112,7 +68,7 @@ def task_two(seatplan):
 
     coeffs = [
         [-1, -1], [-1, 0], [-1, +1],
-        [0, -1], [0, +1],
+        [0, -1],            [0, +1],
         [+1, -1], [+1, 0], [+1, +1]
     ]
 

@@ -21,10 +21,11 @@ def tasks(numbers, limit):
             age = 0
         else:
             age.append(turn - 1)
-            if len(age) >= 3:
-                age = age[1:]
+            # If RAM is an issue un-comment the lines below
+            # if len(age) >= 3:
+            #     age = age[1:]
             memory[last_spoken] = age
-            age = age[1] - age[0]
+            age = age[-1] - age[-2]
 
         last_spoken = age
 

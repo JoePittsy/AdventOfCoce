@@ -54,6 +54,7 @@ def task_two(initial_state):
     return len(activated_cubes)
 
 
+
 if __name__ == "__main__":
     d = read_data("input.txt")
     print(f"Answer for Task One is {task_one(d)}")

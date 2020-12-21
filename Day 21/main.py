@@ -17,7 +17,7 @@ def read_data(path):
     return dataset
 
 
-def task_one(dataset):
+def task_one_and_two(dataset):
     allergens = defaultdict(list)
     for ingredients, allergens_in_ingredients in dataset:
         for allergen in allergens_in_ingredients:
@@ -42,12 +42,12 @@ def task_one(dataset):
 
     all_ingredients = [i for ingredient in dataset for i in ingredient[0]]
     non_allergens = [i for i in all_ingredients if i not in allergens_part1]
-    print(",".join([ingredient[1] for ingredient in sorted(allergens_part2, key=lambda x: x[0])]))
+    task_2 = ",".join([ingredient[1] for ingredient in sorted(allergens_part2, key=lambda x: x[0])])
 
-    return len(non_allergens)
-
+    return len(non_allergens), task_2
 
 
 if __name__ == "__main__":
     data = read_data("input.txt")
-    print(f"Answer for Task One is {task_one(data)}")
+    answers = task_one_and_two(data)
+    print(f"Answer for Task One is {answers[0]}\nAnswer for Task Two is {answers[1]}")
